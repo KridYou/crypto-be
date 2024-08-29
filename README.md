@@ -83,3 +83,29 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+Design Explanation
+Framework: NestJS
+Database: PostgreSQL for storing user data and portfolios.
+Authentication: JWT-based authentication is used to secure endpoints.
+Rate Limiting: Express Rate Limit is used to prevent abuse.
+
+API Documentation
+Endpoints:
+POST /auth/register: Register a new user.
+POST /auth/login: Log in and receive a JWT token.
+GET /crypto/:id: Fetch the current price of a cryptocurrency from CoinGecko.
+
+Obtaining and Securing API Keys
+CoinGecko
+No API Key Required: CoinGecko does not require an API key for basic usage. However, for extensive use, you may want to consider their Pro plans.
+CoinMarketCap (Optional)
+Obtain an API Key: Sign up at CoinMarketCap API to obtain an API key.
+Secure the API Key: Store the API key in environment variables on the server side and do not expose it in frontend code.
+Architecture and Data Flow
+Architecture Diagram
+
+Data Flow
+User Registration/Login: Users interact with the frontend components, which make API requests to the backend for registration and login.
+Fetching Crypto Prices: The frontend requests cryptocurrency prices from CoinGecko (or CoinMarketCap) using Axios. The backend can also fetch data if required.
+Database Operations: The backend performs CRUD operations on the PostgreSQL database for user data and portfolios.
